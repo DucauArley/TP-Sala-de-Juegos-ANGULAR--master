@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="jumbotron">
+    <div class="row" *ngIf="enJuego">
+      <div class="col-4">
+          <img (click)="jugada(1)" src="../../../assets/imagenes/piedra.jpg" class="media-object imagenDeMenu"
+            alt="piedra">
+      </div>
+      <div class="col-4">
+          <img (click)="jugada(2)" src="../../../assets/imagenes/papel.jpg" class="media-object imagenDeMenu"
+            alt="papel">
+      </div>
+      <div class="col-4">
+          <img (click)="jugada(3)" src="../../../assets/imagenes/tijera.jpg" class="media-object imagenDeMenu"
+            alt="tijera">
+      </div>
+        <div class="label-jugadores row">
+            <label class="col-12">
+                <p><i class="fa fa-spinner fa-spin">
+                    </i> Esperando que elija su jugada</p>
+            </label>
+        </div>
+        <div class="col-6">
+          <br><br><br>
+          Maquinola<br>
+            <img class="imagenDeMenu" src={{imagenMaquina}} alt="">
+        </div>
+    </div>
+    <br>
+    <button (click)="empezar()" class="btn btn-primary btn-lg">Nuevo juego</button>
+  </div>
+</div>
