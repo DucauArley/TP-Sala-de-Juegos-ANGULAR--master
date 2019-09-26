@@ -44,6 +44,7 @@ import { InputJugadoresComponent } from './componentes/input-jugadores/input-jug
 import { SexoPipe } from './pipes/sexo.pipe';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TatetiComponent } from './componentes/tateti/tateti.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AppRoutingModule } from './app-routing.module';
     JugadoresListadoComponent,
     InputJugadoresComponent,
     SexoPipe,
-    PiedraPapelTijeraComponent
+    PiedraPapelTijeraComponent,
+    TatetiComponent
   ],
   imports: [
     BrowserModule,
