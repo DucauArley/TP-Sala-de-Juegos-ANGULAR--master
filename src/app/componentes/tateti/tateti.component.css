@@ -1,0 +1,10 @@
+.tablero
+{
+    padding: .5em 1em;
+    justify-content: center;
+}
+
+table
+{
+    background-color: rgb(250, 246, 246);
+}

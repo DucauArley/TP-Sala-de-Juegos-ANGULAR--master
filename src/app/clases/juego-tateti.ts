@@ -12,26 +12,25 @@ export class JuegoTateti extends Juego
         super("Tateti",gano,jugador);
     }
 
-    verificarTresEnLinea(marca: string): boolean 
+    verificarVictoria(simbolo: string): boolean 
     {
         if (//horizontales
-            (this.tablero[0][0] == marca && this.tablero[0][1] == marca && this.tablero[0][2] == marca) ||
-            (this.tablero[1][0] == marca && this.tablero[1][1] == marca && this.tablero[1][2] == marca) ||
-            (this.tablero[2][0] == marca && this.tablero[2][1] == marca && this.tablero[2][2] == marca) ||
+            (this.tablero[0][0] == simbolo && this.tablero[0][1] == simbolo && this.tablero[0][2] == simbolo) ||
+            (this.tablero[1][0] == simbolo && this.tablero[1][1] == simbolo && this.tablero[1][2] == simbolo) ||
+            (this.tablero[2][0] == simbolo && this.tablero[2][1] == simbolo && this.tablero[2][2] == simbolo) ||
             //verticales
-            (this.tablero[0][0] == marca && this.tablero[1][0] == marca && this.tablero[2][0] == marca) ||
-            (this.tablero[0][1] == marca && this.tablero[1][1] == marca && this.tablero[2][1] == marca) ||
-            (this.tablero[0][2] == marca && this.tablero[1][2] == marca && this.tablero[2][2] == marca) ||
+            (this.tablero[0][0] == simbolo && this.tablero[1][0] == simbolo && this.tablero[2][0] == simbolo) ||
+            (this.tablero[0][1] == simbolo && this.tablero[1][1] == simbolo && this.tablero[2][1] == simbolo) ||
+            (this.tablero[0][2] == simbolo && this.tablero[1][2] == simbolo && this.tablero[2][2] == simbolo) ||
             //diagonales
-            (this.tablero[0][0] == marca && this.tablero[1][1] == marca && this.tablero[2][2] == marca) ||
-            (this.tablero[0][2] == marca && this.tablero[1][1] == marca && this.tablero[2][0] == marca)) 
+            (this.tablero[0][0] == simbolo && this.tablero[1][1] == simbolo && this.tablero[2][2] == simbolo) ||
+            (this.tablero[0][2] == simbolo && this.tablero[1][1] == simbolo && this.tablero[2][0] == simbolo)) 
         {
             this.enJuego = true;
-            if (marca == 'O')
+            if (simbolo == 'O')
             {
                 this.gano = true;
             }
-            // this.reset();
         }
         
         return this.enJuego;

@@ -12,7 +12,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   juego: JuegoPiedraPapelTijera;
   enJuego:boolean = false;
   contesto:boolean;
-  public imagenMaquina:string = "../../../assets/imagenes/interrogatorio.png";
+  public imagenMaquina:string = "./././assets/imagenes/interrogatorio.png";
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
 
   empezar()
   {
-    this.imagenMaquina = "../../../assets/imagenes/interrogatorio.png";
+    this.imagenMaquina = "./././assets/imagenes/interrogatorio.png";
     this.contesto = false;
     this.juego = new JuegoPiedraPapelTijera();
     this.juego.JugarMaquina();
@@ -64,13 +64,13 @@ export class PiedraPapelTijeraComponent implements OnInit {
     switch(this.juego.jugadaMaquina)
     {
       case 1:
-        this.imagenMaquina = "../../../assets/imagenes/piedra.jpg";
+        this.imagenMaquina = "./././assets/imagenes/piedra.jpg";
         break;
       case 2:
-        this.imagenMaquina = "../../../assets/imagenes/papel.jpg";
+        this.imagenMaquina = "./././assets/imagenes/papel.jpg";
         break;
       case 3:
-        this.imagenMaquina = "../../../assets/imagenes/tijera.jpg";
+        this.imagenMaquina = "./././assets/imagenes/tijera.jpg";
         break;
     }
   }

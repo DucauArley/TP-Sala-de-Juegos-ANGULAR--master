@@ -45,6 +45,7 @@ import { SexoPipe } from './pipes/sexo.pipe';
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { ShooterComponent } from './componentes/shooter/shooter.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { TatetiComponent } from './componentes/tateti/tateti.component';
     InputJugadoresComponent,
     SexoPipe,
     PiedraPapelTijeraComponent,
-    TatetiComponent
+    TatetiComponent,
+    ShooterComponent
   ],
   imports: [
     BrowserModule,

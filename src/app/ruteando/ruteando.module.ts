@@ -24,6 +24,7 @@ import { JugadoresListadoComponent } from '../componentes/jugadores-listado/juga
 import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { AnagramaComponent} from '../componentes/anagrama/anagrama.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
+import { ShooterComponent } from '../componentes/shooter/shooter.component';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
@@ -47,7 +48,8 @@ children:
       {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
       {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent},
       {path: 'Anagrama', component: AnagramaComponent},
-      {path: 'Tateti', component: TatetiComponent}]
+      {path: 'Tateti', component: TatetiComponent},
+      {path: 'Shooter', component: ShooterComponent}]
 },
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
