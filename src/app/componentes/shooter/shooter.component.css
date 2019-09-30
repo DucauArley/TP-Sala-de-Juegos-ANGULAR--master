@@ -1,6 +1,6 @@
 .custom-cur 
 {
-    cursor: url('/assets/imagenes/Crosshair.cur');
+    cursor: url('../../../assets/imagenes/Crosshair.cur');
 }
 .Columna1
 {
@@ -16,11 +16,11 @@
 }
 .mira
 {
-    cursor: url("/assets/imagenes/Crosshair.cur"), auto;
+    cursor: url("../../../assets/imagenes/Crosshair.cur"), auto;
 }
 #mira
 {
-    cursor: url("/assets/imagenes/Crosshair.cur"), auto;
+    cursor: url("../../../assets/imagenes/Crosshair.cur"), auto;
 }
 .color1
 {
