@@ -2,6 +2,17 @@
 width: 80px;
 height: 70px;
 }
+.panel
+{
+    height: 450px;
+    width: 1366px;
+    background-image: url("/assets/imagenes/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
 
 .hero-text {
     text-align: center;

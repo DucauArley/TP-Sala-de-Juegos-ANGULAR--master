@@ -4,8 +4,7 @@ export class JuegoTateti extends Juego
 {
     tablero: Array<Array<string>> = [["", "", ""], ["", "", ""], ["", "", ""]];
 
-    enJuego:boolean = false
-
+    enJuego:boolean = false;
 
     constructor(nombre?: string, gano?: boolean, jugador?:string) 
     {
@@ -26,14 +25,14 @@ export class JuegoTateti extends Juego
             (this.tablero[0][0] == simbolo && this.tablero[1][1] == simbolo && this.tablero[2][2] == simbolo) ||
             (this.tablero[0][2] == simbolo && this.tablero[1][1] == simbolo && this.tablero[2][0] == simbolo)) 
         {
-            this.enJuego = true;
+            this.enJuego = false;
             if (simbolo == 'O')
             {
                 this.gano = true;
             }
         }
         
-        return this.enJuego;
+        return !this.enJuego;
     }
 
 

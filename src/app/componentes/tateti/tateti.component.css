@@ -8,3 +8,23 @@ table
 {
     background-color: rgb(250, 246, 246);
 }
+
+img{
+    width: 70%;
+    position: relative center;
+    top: 16px;
+}
+td {
+    text-align: center;
+    height: 160px;
+    width: 160px;
+}
+
+#center-row{
+    border-top: 20px solid #454d55;
+    border-bottom: 20px solid #454d55;
+}
+
+.borde-right{
+    border-right: 20px solid #454d55;
+}

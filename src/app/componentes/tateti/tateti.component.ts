@@ -14,14 +14,16 @@ export class TatetiComponent implements OnInit
   imgX: string = './././assets/imagenes/X.png'
   imgO: string = './././assets/imagenes/O.png'
 
-  constructor() { }
+  constructor() 
+  {
+    this.juego = new JuegoTateti();
+  }
 
   ngOnInit() {
   }
 
   NuevoJuego()
   {
-    this.juego = new JuegoTateti();
     this.juego.enJuego = true;
     this.turnoJugador = true;
     this.cuentaMarcas = 0;
@@ -53,6 +55,7 @@ export class TatetiComponent implements OnInit
           if(!this.juego.verificar())
           {
             alert("Perdedor");
+            this.juego.resetar();
           }
         }
       }
@@ -73,6 +76,7 @@ export class TatetiComponent implements OnInit
         else
         {
           alert("Ganador");
+          this.juego.resetar();
         }
       }
     }

@@ -1,0 +1,44 @@
+.custom-cur 
+{
+    cursor: url('/assets/imagenes/Crosshair.cur');
+}
+.Columna1
+{
+    margin-left: 100px;
+}
+.Columna2
+{
+    margin-left: 600px;
+}
+.Columna3
+{
+    margin-left: 1000px;
+}
+.mira
+{
+    cursor: url("/assets/imagenes/Crosshair.cur"), auto;
+}
+#mira
+{
+    cursor: url("/assets/imagenes/Crosshair.cur"), auto;
+}
+.color1
+{
+    background-color: red;
+}
+.color2
+{
+    background-color: green;
+}
+.color3
+{
+    background-color: blueviolet;
+}
+.color4
+{
+    background-color: blue;
+}
+.color5
+{
+    background-color :orange;
+}
