@@ -1,4 +1,19 @@
-.imagenDeMenu{
+.imagenDeMenu
+{
     width: 200px;
     height: 200px;
-    }
+}
+.panel
+{
+    height: 745px;
+    width: 1366px;
+    background-image: url("../../../assets/imagenes/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.color
+{
+    background-color:grey;
+}

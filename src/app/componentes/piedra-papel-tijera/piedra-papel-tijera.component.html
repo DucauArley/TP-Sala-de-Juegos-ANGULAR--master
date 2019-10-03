@@ -1,6 +1,7 @@
-<h1 style="text-align:center">Piedra, Papel o Tijera!</h1>
+<body class="panel">
+<h1 style="color: orange; text-align:center">Piedra, Papel o Tijera!</h1>
 <div class="container">
-  <div class="jumbotron">
+  <div class="jumbotron" style="background-color: white">
     <div class="row" *ngIf="enJuego">
       <div class="col-4">
           <img (click)="jugada(1)" src="./././assets/imagenes/piedra.jpg" class="media-object imagenDeMenu"
@@ -27,6 +28,7 @@
         </div>
     </div>
     <br>
-    <button (click)="empezar()" class="btn btn-primary btn-lg">Nuevo juego</button>
+    <button [hidden]="enJuego" (click)="empezar()" class="btn btn-primary btn-lg">Nuevo juego</button>
   </div>
 </div>
+</body>

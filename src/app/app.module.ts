@@ -6,6 +6,10 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { ListadoDeResultadosComponent } from './componentes/listado-de-resultados/listado-de-resultados.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpModule } from '@angular/http';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 import { AccordionModule } from 'ngx-bootstrap';
 // agrego las clases para utilizar ruteo
@@ -15,7 +19,7 @@ import { MiHttpService } from './servicios/mi-http/mi-http.service';
 import { PaisesService } from './servicios/paises.service'; 
 
 import { JugadoresService } from './servicios/jugadores.service'; 
-import{ ArchivosJugadoresService} from './servicios/archivos-jugadores.service'; 
+import { ArchivosJugadoresService } from './servicios/archivos-jugadores.service'; 
 import { ErrorComponent } from './componentes/error/error.component';
 import { PrincipalComponent } from './componentes/principal/principal.component';
 import { AgilidadAritmeticaComponent } from './componentes/agilidad-aritmetica/agilidad-aritmetica.component';
@@ -83,12 +87,14 @@ import { ShooterComponent } from './componentes/shooter/shooter.component';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService],
+  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }  

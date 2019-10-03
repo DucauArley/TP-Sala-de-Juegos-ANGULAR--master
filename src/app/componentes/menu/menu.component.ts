@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AuthService } from './../../servicios/auth.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,11 +9,18 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) { }
+  logeado:boolean = false;
 
-  ngOnInit() {
-  }
+  constructor(private route: ActivatedRoute,
+    private router: Router, private authService: AuthService) { }
+
+    ngOnInit() {
+    }
+  
+    Logout() 
+    {
+      this.authService.LogoutUsuario();
+    }
 
   Juego(tipo: string) {
     switch (tipo) {

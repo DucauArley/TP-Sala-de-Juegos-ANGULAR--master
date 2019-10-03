@@ -26,7 +26,6 @@
         </ul>
     </div>
   </nav-->
-
   
   <nav class="navbar color">
     <div class="container-fluid">
@@ -46,11 +45,11 @@
               <li><a  (click)="Juego('Tateti')">Tateti</a></li>
               <li><a  (click)="Juego('Shooter')">Shooter</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/QuienSoy"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-                <li><a href="Login"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
-              </ul>
       </div>
+      <ul class="nav navbar-nav navbar-right">
+          <li><a href="/QuienSoy"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
+          <li (click)="Logout()"><a href="/Principal"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+      </ul>
     </div>
   </nav>
       

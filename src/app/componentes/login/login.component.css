@@ -1,8 +1,18 @@
 
 form {
-    border: 10px solid #f1f1f1;
+    border: 10px solid #F9AF38;
     padding: 10px;
-    background:gray;
+    background:#141D3F;
+}
+.panel
+{
+    height: 100%;
+    width: 100%;
+    background-image: url("../../../assets/imagenes/fondo.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 input[type=text], input[type=password] {

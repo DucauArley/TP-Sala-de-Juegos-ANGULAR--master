@@ -13,6 +13,7 @@ export class ShooterComponent implements OnInit
   Tiempo:number;
   numBoton:number = 0;
   contador:number = 0;
+  blancos:number ;
 
   constructor() { }
 
@@ -21,16 +22,23 @@ export class ShooterComponent implements OnInit
 
   NuevoJuego()
   {
-    this.contador = 0;
-    this.enJuego = true;
+    if(this.blancos > 0)
+    {
+      this.contador = 0;
+      this.enJuego = true;
+      this.blancos ++;
 
-    this.Jugar();
-
+      this.Jugar();
+    }
+    else
+    {
+      alert("Debe ingresar un numero positivo");
+    }
   }
 
   Jugar()
   {
-    this.Tiempo = 11;
+    this.Tiempo = this.blancos;
     this.repetidor = setInterval(()=>
     { 
       this.Tiempo--;
@@ -49,7 +57,17 @@ export class ShooterComponent implements OnInit
       if(this.Tiempo==0) 
       {
         clearInterval(this.repetidor);
-        this.Tiempo=11;
+        this.Tiempo=this.blancos;
+        if(this.contador == this.blancos -1)
+        {
+          alert("Gano");
+          this.blancos = 0;
+        }
+        else
+        {
+          alert("Perdio");
+          this.blancos = 0;
+        }
         this.enJuego = false;
       }
     }, 1500);

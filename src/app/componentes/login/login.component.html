@@ -21,16 +21,17 @@
     </div>
   </div>
 </div-->
+<body class="panel">
  <div class="container" >
-  <div class="jumbotron" style="padding:50px;">
+  <div class="jumbotron" style="padding:50px; background-color: #F84944;">
     <form action="return true;">
       <div class="imgcontainer">
         <img src="./assets/imagenes/login.png" alt="Avatar" class="avatar" max-width="104" >
       </div>
 
       <div class="container">
-        <label><b>Usuario</b></label>
-        <input type="text" placeholder="Usuario"  [(ngModel)]="usuario"  name="uname" required>
+        <label><b>Email</b></label>
+        <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
 
         <label><b>Clave</b></label>
         <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
@@ -43,15 +44,14 @@
             </div>
         </div>
        
-        <input type="checkbox" checked="checked"> Recordar mis datos
       </div>
 
-      <div class="container" style="background-color:#f1f1f1">
-        <button type="button" class="cancelbtn">Cancelar</button>
+      <div class="container" style="background-color: #F9AF38">
+        <button type="button" class="cancelbtn" routerLink="/Principal">Cancelar</button>
         <button type="button" class="aceptbtn" routerLink="/Registro" >Registrarse</button>
-        <span class="psw">Te olvidaste <a href="#">la clave?</a></span>
       </div>
      
     </form>
   </div>
 </div>
+</body>

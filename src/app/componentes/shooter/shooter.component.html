@@ -1,10 +1,13 @@
-<h1 style="text-align:center">Shooter!</h1>
+<body class="panel">
+<h1 style="color: orange; text-align:center">Shooter!</h1>
+<div class="jumbotron mira container" style="background-color: lightgrey">
+    <div class="row">
 <form name="juego">
         <ul>
-          <div *ngIf="enJuego" class="jumbotron mira">
+          <div *ngIf="enJuego" class="mira">
 
             <div>
-                <button [hidden]="numBoton != 1" id="mira" (click)="Entra()"  class="btn color5 btn-lg Columna1"><input type=image class="mira" src="./././assets/imagenes/terror2.png" width="80" height="65"></button>
+                <button [hidden]="numBoton != 1" id="mira" (click)="Entra()"  class="btn color5 btn-lg Columna1"><input type=image class="mira" src="./././assets/imagenes/terror2.png" width="70" height="65"></button>
                 <button [hidden]="numBoton != 2" id="mira" (click)="Entra()"  class="btn color2 btn-lg Columna2"><input type=image class="mira" src="./././assets/imagenes/terror3.gif" width="70" height="65"></button>                
                 <button [hidden]="numBoton != 3" id="mira" (click)="Entra()"  class="btn color1 btn-lg Columna3"><input type=image class="mira" src="./././assets/imagenes/terror4.png" width="70" height="65"></button>
             </div>
@@ -13,7 +16,7 @@
             <br>
             <br>
             <div>
-                <button [hidden]="numBoton != 4" id="mira" (click)="Entra()"  class="btn color2 btn-lg Columna1"><input type=image class="mira" src="./././assets/imagenes/terror2.png" width="80" height="65"></button>
+                <button [hidden]="numBoton != 4" id="mira" (click)="Entra()"  class="btn color2 btn-lg Columna1"><input type=image class="mira" src="./././assets/imagenes/terror2.png" width="70" height="65"></button>
                 <button [hidden]="numBoton != 5" id="mira" (click)="Entra()"  class="btn color3 btn-lg Columna2"><input type=image class="mira" src="./././assets/imagenes/terror4.png" width="70" height="65"></button>
                 <button [hidden]="numBoton != 6" id="mira" (click)="Entra()"  class="btn color5 btn-lg Columna3"><input type=image class="mira" src="./././assets/imagenes/terror1.gif" width="70" height="65"></button>
             </div>
@@ -26,19 +29,18 @@
                 <button [hidden]="numBoton != 8" id="mira" (click)="Entra()"  class="btn color1 btn-lg Columna2"><input type=image class="mira" src="./././assets/imagenes/terror1.gif" width="70" height="65"></button>
                 <button [hidden]="numBoton != 9" id="mira" (click)="Entra()"  class="btn color3 btn-lg Columna3"><input type=image class="mira" src="./././assets/imagenes/terror3.gif" width="70" height="65"></button>
             </div>
-
-            <!--<div style="float: right; margin-right: 400px;">
-                <p>cantidad: {{juntado}}</p>
-                <br>
-                <p>Puntuacion: {{puntuacion}}</p>
-                <br>
-                <p>Record: {{maximo}}</p>
-                <br>
-                <p>Tiempo: {{tiempo}}</p>
-            </div>-->
             <br>
         
           </div>
-        <button [hidden]="enJuego" (click)="NuevoJuego()"  class="btn btn-info btn-lg">NuevoJuego</button>
-        </ul>
+
+        <div [hidden]="enJuego">
+        Cantidad de blancos:
+        <input [(ngModel)]="blancos" placeholder="ingrese la cantidad de blancos" name="numeroIngresado" type="text" class="form-control" style="width:200%"/>
+        <br>
+        <button (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Juego</button>
+      </div>
+      </ul>
 </form>
+</div>
+</div>
+</body>

@@ -3,28 +3,40 @@
     padding: .5em 1em;
     justify-content: center;
 }
-
 table
 {
-    background-color: rgb(250, 246, 246);
+    background-color: white;
 }
-
-img{
-    width: 70%;
+img
+{
+    width: 63%;
     position: relative center;
     top: 16px;
 }
-td {
+td
+{
     text-align: center;
     height: 160px;
     width: 160px;
 }
 
-#center-row{
-    border-top: 20px solid #454d55;
-    border-bottom: 20px solid #454d55;
+#center-row
+{
+    border-top: 20px solid #141D3F;
+    border-bottom: 20px solid #141D3F;
 }
 
-.borde-right{
-    border-right: 20px solid #454d55;
+.borde-right
+{
+    border-right: 20px solid #141D3F;
+}
+.panel
+{
+    height: 645px;
+    width: 1366px;
+    background-image: url("../../../assets/imagenes/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }

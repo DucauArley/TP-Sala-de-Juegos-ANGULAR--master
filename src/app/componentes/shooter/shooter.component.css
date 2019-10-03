@@ -8,11 +8,11 @@
 }
 .Columna2
 {
-    margin-left: 600px;
+    margin-left: 500px;
 }
 .Columna3
 {
-    margin-left: 1000px;
+    margin-left: 800px;
 }
 .mira
 {
@@ -41,4 +41,14 @@
 .color5
 {
     background-color :orange;
+}
+.panel
+{
+    height: 545px;
+    width: 1366px;
+    background-image: url("../../../assets/imagenes/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }

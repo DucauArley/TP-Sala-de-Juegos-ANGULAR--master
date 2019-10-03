@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { AuthService } from './../../servicios/auth.service';
 
 import {Subscription} from "rxjs";
 import {TimerObservable} from "rxjs/observable/TimerObservable";
@@ -11,7 +14,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 export class LoginComponent implements OnInit {
 
   private subscription: Subscription;
-  usuario = '';
+  email = '';
   clave= '';
   progreso: number;
   progresoMensaje="esperando..."; 
@@ -21,8 +24,8 @@ export class LoginComponent implements OnInit {
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
-    private route: ActivatedRoute,
-    private router: Router) {
+    private route: ActivatedRoute, private router: Router, public afAuth: AngularFireAuth, private authService: AuthService) 
+    {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
 
@@ -31,13 +34,35 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  Entrar() {
-    if (this.usuario === 'admin' && this.clave === 'admin') {
+  Entrar() 
+  {
+    this.authService.LoginUsuario(this.email, this.clave).then((res)=>
+    {
       this.router.navigate(['/Principal']);
-    }
+    }).catch(error =>
+    { 
+        console.log("Error:", error);
+
+        switch(error.code)
+        {
+          case "auth/invalid-email":
+            alert("El email no existe");
+            break;
+          case "auth/wrong-password":
+            alert("La contraseña es incorrecta");
+            break;
+          case "auth/user-not-found":
+            alert("El usuario no existe");
+            break;
+        }
+
+    });
+
+    
   }
   MoverBarraDeProgreso() {
     
+    this.progreso = 0;
     this.logeando=false;
     this.clase="progress-bar progress-bar-danger progress-bar-striped active";
     this.progresoMensaje="NSA spy..."; 
@@ -72,10 +97,10 @@ export class LoginComponent implements OnInit {
           console.log("final");
           this.subscription.unsubscribe();
           this.Entrar();
+          this.logeando=true;
           break;
       }     
     });
-    //this.logeando=true;
   }
 
 }
