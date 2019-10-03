@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
-    private route: ActivatedRoute, private router: Router, public afAuth: AngularFireAuth, private authService: AuthService) 
+    private route: ActivatedRoute, private router: Router, /*public afAuth: AngularFireAuth, private authService: AuthService*/) 
     {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-
+/*
   Entrar() 
   {
     this.authService.LoginUsuario(this.email, this.clave).then((res)=>
@@ -102,5 +102,5 @@ export class LoginComponent implements OnInit {
       }     
     });
   }
-
+*/
 }

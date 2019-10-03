@@ -14,16 +14,16 @@ export class MenuComponent implements OnInit {
   logeado:boolean = false;
 
   constructor(private route: ActivatedRoute,
-    private router: Router, private authService: AuthService) { }
+    private router: Router, /*private authService: AuthService*/) { }
 
     ngOnInit() {
     }
-  
+  /*
     Logout() 
     {
       this.authService.LogoutUsuario();
     }
-
+*/
   Juego(tipo: string) {
     switch (tipo) {
       case 'Adivina':

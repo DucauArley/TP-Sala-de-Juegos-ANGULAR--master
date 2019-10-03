@@ -15,9 +15,9 @@ export class CabeceraComponent implements OnInit {
   constructor(private authService: AuthService) { }
 
   ngOnInit() {
-    this.getCurrentUser();
+    //this.getCurrentUser();
   }
-
+/*
   getCurrentUser() 
   {
     this.authService.isAuth().subscribe(auth => {
@@ -38,5 +38,5 @@ export class CabeceraComponent implements OnInit {
   }
 
 
-
+*/
 }

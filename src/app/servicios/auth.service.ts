@@ -10,7 +10,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 })
 export class AuthService {
 
-  public logeado: any = false;
+  /*public logeado: any = false;
 
   constructor(public afAuth: AngularFireAuth) 
   {
@@ -44,7 +44,7 @@ export class AuthService {
   isAuth() 
   {
     return this.afAuth.authState.pipe(map(auth => auth));
-  }
+  }*/
 
 
 }

@@ -14,11 +14,11 @@ export class RegistroComponent implements OnInit {
   email: string = "";
   clave: string = "";
 
-  constructor(private router: Router, private authService: AuthService) { }
+  constructor(private router: Router, /*private authService: AuthService*/) { }
 
   ngOnInit() {
   }
-
+/*
   Registrar()
   {
     this.authService.RegistrarUsuario(this.email, this.clave).then((res)=>  
@@ -27,5 +27,5 @@ export class RegistroComponent implements OnInit {
     }).catch(error => console.log("Error:", error));
   }
 
-
+*/
 }

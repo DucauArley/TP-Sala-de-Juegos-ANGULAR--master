@@ -21,9 +21,9 @@ export class PrincipalComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.getCurrentUser();
+    //this.getCurrentUser();
   }
-
+/*
   getCurrentUser() 
   {
     this.authService.isAuth().subscribe(auth => {
@@ -38,6 +38,6 @@ export class PrincipalComponent implements OnInit {
         console.log('NOT user logged', this.authService);
       }
     });
-  }
+  }*/
 
 }
