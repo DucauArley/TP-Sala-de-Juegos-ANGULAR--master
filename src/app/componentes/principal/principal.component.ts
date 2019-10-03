@@ -27,7 +27,7 @@ export class PrincipalComponent implements OnInit {
   getCurrentUser() 
   {
     this.authService.isAuth().subscribe(auth => {
-      if (auth)
+      if(auth)
       {
         this.logeado = true;
         console.log('user logged', this.authService);
