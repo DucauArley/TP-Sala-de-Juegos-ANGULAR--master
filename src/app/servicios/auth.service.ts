@@ -10,9 +10,9 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 })
 export class AuthService {
 
-  /*public logeado: any = false;
+  public logeado: any = false;
 
-  constructor(public afAuth: AngularFireAuth) 
+ /* constructor(public afAuth: AngularFireAuth) 
   {
     afAuth.authState.subscribe(user=>(this.logeado = user))
   }

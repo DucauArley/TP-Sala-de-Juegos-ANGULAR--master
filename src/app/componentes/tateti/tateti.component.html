@@ -2,7 +2,7 @@
 <h1 style="color: orange; text-align:center">Tateti!</h1>
 <form name="juego">
     <ul>
-      <div *ngIf="juego.enJuego" class="row tablero">
+      <div *ngIf="!juego.sacarJuego" class="row tablero">
         <table class="table table-bordered col-sm-10 col-md-6 col-lg-6">
           <tbody>
               <tr>
@@ -44,7 +44,8 @@
         <br>
     
       </div>
-        <button  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Juego</button>
+        <button [hidden]="!juego.sacarJuego"  (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Juego</button>
     </ul>
     </form>
+    <div id="snackbar">{{Mensajes}}</div>
 </body>

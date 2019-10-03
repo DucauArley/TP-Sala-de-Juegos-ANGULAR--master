@@ -11,6 +11,7 @@ export class AnagramaComponent implements OnInit {
   enJuego: boolean = false;
   juego: JuegoAnagrama;
   ocultarVerificar:boolean = false;
+  Mensajes: string;
 
   constructor() 
   {
@@ -32,18 +33,36 @@ export class AnagramaComponent implements OnInit {
 
   Verificar()
   {
+    this.ocultarVerificar = false;
 
     if(this.juego.verificar())
     {
-      alert("Gano");
+      this.MostarMensaje("Ganaste genio!!!", true);
     }
     else
     {
-      alert("Perdio");
+      this.MostarMensaje("Perdiste", false);
     }
 
-    this.ocultarVerificar = false;
     this.enJuego = false
   }
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    var modelo=this;
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+      modelo.ocultarVerificar=true;
+     }, 3000);
+    console.info("objeto",x);
+  
+   }
 
 }

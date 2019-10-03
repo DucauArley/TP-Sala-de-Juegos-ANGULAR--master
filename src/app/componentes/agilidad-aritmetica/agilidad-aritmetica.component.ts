@@ -18,6 +18,7 @@ export class AgilidadAritmeticaComponent implements OnInit {
   Tiempo: number;
   repetidor:any;
   enJuego: boolean = false;
+  Mensajes: string;
   private subscription: Subscription;
 
   ngOnInit() {
@@ -60,14 +61,32 @@ export class AgilidadAritmeticaComponent implements OnInit {
 
     if(this.nuevoJuego.verificar())
     {
-      alert("Gano");
+      this.MostarMensaje("Ganaste Genio!!!", true);
     }
     else
     {
-      alert("Perdio");
+      this.MostarMensaje("Perdiste, necesitas practicar mas", false);
     }
 
     this.enJuego = false
   }  
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    var modelo=this;
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+      modelo.ocultarVerificar=false;
+     }, 3000);
+    console.info("objeto",x);
+  
+   }  
 
 }

@@ -11,6 +11,7 @@ export class TatetiComponent implements OnInit
   juego: JuegoTateti;
   turnoJugador:boolean = false;
   cuentaMarcas:number = 0;
+  Mensajes: string;
   imgX: string = './././assets/imagenes/X.png'
   imgO: string = './././assets/imagenes/O.png'
 
@@ -25,6 +26,7 @@ export class TatetiComponent implements OnInit
   NuevoJuego()
   {
     this.juego.enJuego = true;
+    this.juego.sacarJuego = false;
     this.turnoJugador = true;
     this.cuentaMarcas = 0;
   }
@@ -54,8 +56,17 @@ export class TatetiComponent implements OnInit
         {
           if(!this.juego.verificar())
           {
-            alert("Perdedor");
-            this.juego.resetar();
+            this.MostarMensaje("Perdiste, la maquina juega bien", false);
+            let segundos = 2;
+            let intervalo = setInterval(()=>
+            {
+              segundos = segundos -1;
+              if(segundos == 0)
+              {
+                this.juego.resetar();
+                clearInterval(intervalo);
+              }
+            },1000);
           }
         }
       }
@@ -75,11 +86,36 @@ export class TatetiComponent implements OnInit
         }
         else
         {
-          alert("Ganador");
-          this.juego.resetar();
+          this.MostarMensaje("Ganaste, superaste a la maquina", true);
+
+          let segundos2 = 2;
+          let intervalo2 = setInterval(()=>
+          {
+            segundos2 = segundos2 -1;
+            if(segundos2 == 0)
+            {
+              this.juego.resetar();
+              clearInterval(intervalo2);
+            }
+          },1000);
         }
       }
     }
   }
 
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+     }, 3000);
+    console.info("objeto",x);
+  
+   }
 }

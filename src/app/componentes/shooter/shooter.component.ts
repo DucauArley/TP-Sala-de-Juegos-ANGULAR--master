@@ -14,6 +14,7 @@ export class ShooterComponent implements OnInit
   numBoton:number = 0;
   contador:number = 0;
   blancos:number ;
+  Mensajes: string;
 
   constructor() { }
 
@@ -26,13 +27,12 @@ export class ShooterComponent implements OnInit
     {
       this.contador = 0;
       this.enJuego = true;
-      this.blancos ++;
 
       this.Jugar();
     }
     else
     {
-      alert("Debe ingresar un numero positivo");
+      this.MostarMensaje("Se deben ingresar numeros positivos");
     }
   }
 
@@ -58,17 +58,37 @@ export class ShooterComponent implements OnInit
       {
         clearInterval(this.repetidor);
         this.Tiempo=this.blancos;
-        if(this.contador == this.blancos -1)
+
+        let tiempo = 1;
+        let descanso = setInterval(()=>
         {
-          alert("Gano");
-          this.blancos = 0;
-        }
-        else
+          tiempo = tiempo - 1;
+          if(tiempo == 0)
+          {
+            if(this.contador == this.blancos)
+            {
+              this.MostarMensaje("Sos habil tirador!", true);
+              this.blancos = 0;
+            }
+            else
+            {
+              this.MostarMensaje("Perdiste, tenes que practicar mas", false);
+              this.blancos = 0;
+            }
+            clearInterval(descanso);
+          }
+        },1000);
+
+        let segundos = 2;
+        let intervalo = setInterval(()=>
         {
-          alert("Perdio");
-          this.blancos = 0;
-        }
-        this.enJuego = false;
+          segundos = segundos -1;
+          if(segundos == 0)
+          {
+            this.enJuego = false;
+            clearInterval(intervalo);
+          }
+        },1000);
       }
     }, 1500);
 
@@ -89,6 +109,23 @@ export class ShooterComponent implements OnInit
     console.log(this.contador);
     this.numBoton = -1;
   }
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    var modelo=this;
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+     }, 3000);
+    console.info("objeto",x);
+  
+   }
 
 
 }

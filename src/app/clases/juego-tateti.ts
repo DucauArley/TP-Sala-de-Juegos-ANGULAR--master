@@ -5,6 +5,7 @@ export class JuegoTateti extends Juego
     tablero: Array<Array<string>> = [["", "", ""], ["", "", ""], ["", "", ""]];
 
     enJuego:boolean = false;
+    sacarJuego: boolean = true;
 
     constructor(nombre?: string, gano?: boolean, jugador?:string) 
     {
@@ -52,6 +53,7 @@ export class JuegoTateti extends Juego
     {
         this.gano = false;
         this.tablero = [["", "", ""], ["", "", ""], ["", "", ""]];
+        this.sacarJuego = true;
     }
 
 
