@@ -20,11 +20,12 @@ export class LoginComponent implements OnInit {
   progresoMensaje="esperando..."; 
   logeando=true;
   ProgresoDeAncho:string;
+  Mensajes: string;
 
   clase="progress-bar progress-bar-info progress-bar-striped ";
 
   constructor(
-    private route: ActivatedRoute, private router: Router, /*public afAuth: AngularFireAuth, private authService: AuthService*/) 
+    private route: ActivatedRoute, private router: Router, public afAuth: AngularFireAuth, private authService: AuthService) 
     {
       this.progreso=0;
       this.ProgresoDeAncho="0%";
@@ -36,9 +37,19 @@ export class LoginComponent implements OnInit {
 
   Entrar() 
   {
-    /*this.authService.LoginUsuario(this.email, this.clave).then((res)=>
+    this.authService.LoginUsuario(this.email, this.clave).then((res)=>
     {
-      this.router.navigate(['/Principal']);
+      this.MostarMensaje("Te logueaste exitosamente", true);
+      let segundos = 1;
+      let intervalo = setInterval(()=>
+      {
+        segundos = segundos -1;
+        if(segundos == 0)
+        {
+          this.router.navigate(['/Principal']);
+          clearInterval(intervalo);
+        }
+      },1000);
     }).catch(error =>
     { 
         console.log("Error:", error);
@@ -46,20 +57,36 @@ export class LoginComponent implements OnInit {
         switch(error.code)
         {
           case "auth/invalid-email":
-            alert("El email no existe");
+            this.MostarMensaje("El email no existe");
             break;
           case "auth/wrong-password":
-            alert("La contraseña es incorrecta");
+            this.MostarMensaje("La contraseña es incorrecta");
             break;
           case "auth/user-not-found":
-            alert("El usuario no existe");
+            this.MostarMensaje("El usuario no existe, registrate!");
             break;
         }
 
     });
-
-    */
   }
+
+  MostarMensaje(mensaje:string="este es el mensaje",ganador:boolean=false) {
+    this.Mensajes=mensaje;    
+    var x = document.getElementById("snackbar");
+    if(ganador)
+      {
+        x.className = "show Ganador";
+      }else{
+        x.className = "show Perdedor";
+      }
+    var modelo=this;
+    setTimeout(function(){ 
+      x.className = x.className.replace("show", "");
+     }, 3000);
+    console.info("objeto",x);
+  
+   }
+
   MoverBarraDeProgreso() {
     
     this.progreso = 0;

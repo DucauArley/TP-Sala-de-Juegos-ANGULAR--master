@@ -30,10 +30,10 @@
       </div>
 
       <div class="container">
-        <label><b>Email</b></label>
+        <label><b style="color: #F9AF38">Email</b></label>
         <input type="text" placeholder="Email"  [(ngModel)]="email"  name="uname" required>
 
-        <label><b>Clave</b></label>
+        <label><b style="color: #F9AF38">Clave</b></label>
         <input type="password" placeholder="Clave"  [(ngModel)]="clave" name="psw" required>
             
         <button *ngIf="logeando"  (click)="MoverBarraDeProgreso()" >Ingresar</button>
@@ -54,4 +54,5 @@
     </form>
   </div>
 </div>
+<div id="snackbar">{{Mensajes}}</div>
 </body>

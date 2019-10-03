@@ -10,6 +10,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 
@@ -51,6 +52,7 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { AppRoutingModule } from './app-routing.module';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { ShooterComponent } from './componentes/shooter/shooter.component';
+import { AuthService } from './servicios/auth.service';
 
 @NgModule({
   declarations: [
@@ -90,13 +92,14 @@ import { ShooterComponent } from './componentes/shooter/shooter.component';
       apiKey: 'AIzaSyB6f8x4IjRlesQ3oETc6BXYQHVRTOlY3Ys'
     }),
     AppRoutingModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     // NgbModule.forRoot(MiRuteo),
     // importo el ruteo
     // RouterModule.forRoot(MiRuteo)
   ],
-  providers: [ JuegoServiceService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, AngularFireAuth, AngularFirestore],
+  providers: [ JuegoServiceService, AuthService, MiHttpService,PaisesService,ArchivosJugadoresService,JugadoresService, AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }  

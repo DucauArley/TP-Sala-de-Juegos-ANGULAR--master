@@ -25,7 +25,14 @@ export class JuegoAnagrama extends Juego
 
         array.sort(function() 
         {
-            return Math.floor((Math.random() * 3)) - 1
+            let retorno = Math.floor((Math.random() * 3)) - 1;
+
+            while(retorno == 0)
+            {
+                retorno = Math.floor((Math.random() * 3)) - 1;
+            }
+
+            return retorno;
         });
 
         this.palabraDesordenada = array.join("");

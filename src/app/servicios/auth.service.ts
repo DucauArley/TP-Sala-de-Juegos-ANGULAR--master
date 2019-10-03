@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { map } from 'rxjs/operators';
-import { auth } from 'firebase/app';
+import * as firebase from 'firebase/app';
+import {auth} from 'firebase/app';
 
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 
@@ -12,7 +13,7 @@ export class AuthService {
 
   public logeado: any = false;
 
- /* constructor(public afAuth: AngularFireAuth) 
+  constructor(public afAuth: AngularFireAuth) 
   {
     afAuth.authState.subscribe(user=>(this.logeado = user))
   }
@@ -44,7 +45,7 @@ export class AuthService {
   isAuth() 
   {
     return this.afAuth.authState.pipe(map(auth => auth));
-  }*/
+  }
 
 
 }

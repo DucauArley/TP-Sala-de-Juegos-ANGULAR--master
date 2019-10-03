@@ -33,7 +33,7 @@ td
 .panel
 {
     height: 645px;
-    width: 1366px;
+    width: 100%;
     background-image: url("../../../assets/imagenes/fondo.jpg");
     background-position: center;
     background-repeat: no-repeat;

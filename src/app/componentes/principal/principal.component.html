@@ -4,7 +4,7 @@
 <div class="container" >
    
         <li class="color1">
-          <a routerLink="/Juegos">
+          <a *ngIf="logeado" routerLink="/Juegos">
             <div class="media">
               <div class="media-left">
                     <img src="./assets/imagenes/saladejuegos.jpg" class="media-object imagenDeMenu" >
@@ -13,7 +13,17 @@
                 <h3 class="media-heading">Juegos</h3> 
                 <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
               </div>
-             
+            </div>
+          </a>
+          <a *ngIf="!logeado" routerLink="/Login">
+            <div class="media">
+              <div class="media-left">
+                    <img src="./assets/imagenes/saladejuegos.jpg" class="media-object imagenDeMenu" >
+              </div>
+              <div class="media-body">
+                <h3 class="media-heading">Juegos</h3> 
+                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
+              </div>
             </div> 
           </a>
         </li>
