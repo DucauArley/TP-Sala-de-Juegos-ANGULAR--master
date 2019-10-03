@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../servicios/auth.service';
+import { auth } from 'firebase/app';
+
 
 @Component({
   selector: 'app-principal',
@@ -18,8 +20,6 @@ export class PrincipalComponent implements OnInit {
   {
 
   }
-  public app_name: string = 'BookStore';
-  public isLogged: boolean = false;
   ngOnInit() {
     this.getCurrentUser();
   }

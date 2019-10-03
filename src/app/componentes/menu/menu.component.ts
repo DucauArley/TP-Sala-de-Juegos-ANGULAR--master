@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AuthService } from './../../servicios/auth.service';
+import { auth } from 'firebase/app';
+
 
 @Component({
   selector: 'app-menu',

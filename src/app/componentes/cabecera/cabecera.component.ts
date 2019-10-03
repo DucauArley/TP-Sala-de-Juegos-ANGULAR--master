@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../servicios/auth.service';
+import { auth } from 'firebase/app';
+
 
 @Component({
   selector: 'app-cabecera',
