@@ -61,6 +61,8 @@ MIT
 
 @angular/fire/database
 
+@angular/fire/firestore
+
 @angular/forms
 MIT
 
