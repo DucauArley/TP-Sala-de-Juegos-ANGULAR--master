@@ -18,14 +18,13 @@ export class RegistroComponent implements OnInit {
 
   ngOnInit() {
   }
-/*
+
   Registrar()
   {
-    this.authService.RegistrarUsuario(this.email, this.clave).then((res)=>  
+    /*this.authService.RegistrarUsuario(this.email, this.clave).then((res)=>  
     {
       this.router.navigate(['/Principal']);
-    }).catch(error => console.log("Error:", error));
+    }).catch(error => console.log("Error:", error));*/
   }
 
-*/
 }

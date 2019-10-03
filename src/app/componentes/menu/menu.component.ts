@@ -18,12 +18,12 @@ export class MenuComponent implements OnInit {
 
     ngOnInit() {
     }
-  /*
+  
     Logout() 
     {
-      this.authService.LogoutUsuario();
+      //this.authService.LogoutUsuario();
     }
-*/
+
   Juego(tipo: string) {
     switch (tipo) {
       case 'Adivina':

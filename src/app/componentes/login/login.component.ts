@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
   }
-/*
+
   Entrar() 
   {
-    this.authService.LoginUsuario(this.email, this.clave).then((res)=>
+    /*this.authService.LoginUsuario(this.email, this.clave).then((res)=>
     {
       this.router.navigate(['/Principal']);
     }).catch(error =>
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
 
     });
 
-    
+    */
   }
   MoverBarraDeProgreso() {
     
@@ -102,5 +102,4 @@ export class LoginComponent implements OnInit {
       }     
     });
   }
-*/
 }

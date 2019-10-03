@@ -31,12 +31,10 @@ export class CabeceraComponent implements OnInit {
       }
     });
   }
-
+*/
   Logout() 
   {
-    this.authService.LogoutUsuario();
+    //this.authService.LogoutUsuario();
   }
 
-
-*/
 }
