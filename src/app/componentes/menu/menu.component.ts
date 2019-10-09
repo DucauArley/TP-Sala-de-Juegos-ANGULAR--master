@@ -22,7 +22,9 @@ export class MenuComponent implements OnInit {
     Logout() 
     {
       this.authService.LogoutUsuario();
+      this.router.navigate(['/Principal']);
     }
+
 
   Juego(tipo: string) {
     switch (tipo) {

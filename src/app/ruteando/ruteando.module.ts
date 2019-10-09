@@ -25,32 +25,33 @@ import { PiedraPapelTijeraComponent } from '../componentes/piedra-papel-tijera/p
 import { AnagramaComponent} from '../componentes/anagrama/anagrama.component';
 import { TatetiComponent } from '../componentes/tateti/tateti.component';
 import { ShooterComponent } from '../componentes/shooter/shooter.component';
+import { animation } from '@angular/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // declaro donde quiero que se dirija
 const MiRuteo = [
-{path: 'Jugadores' , component: JugadoresListadoComponent},
+{path: 'Jugadores' , component: JugadoresListadoComponent, data: {animation: 'bienvenidopage'}},
 {path: '' , component: PrincipalComponent},
-{path: 'Login' , component: LoginComponent},
+{path: 'Login' , component: LoginComponent , data: {animation: 'bienvenidopage'}},
 {path: 'Mapa' , component: MapaDeGoogleComponent},
-{path: 'QuienSoy' , component: QuienSoyComponent},
-{path: 'Registro' , component: RegistroComponent},
-{path: 'Principal' , component: PrincipalComponent},
-{path: 'Listado' , component: ListadoComponent},
+{path: 'QuienSoy' , component: QuienSoyComponent, data: {animation: 'bienvenidopage'}},
+{path: 'Registro' , component: RegistroComponent, data: {animation: 'FilterPage'}},
+{path: 'Principal' , component: PrincipalComponent, data: {animation: 'loginpage'}},
+{path: 'Listado' , component: ListadoComponent, data: {animation: 'bienvenidopage'}},
 {path: 'Paises' , component: ListadoDePaisesComponent},
 
 { path: 'Juegos' ,
-component: JuegosComponent ,
+component: JuegosComponent, data: {animation: 'FilterPage'}, 
 children:
-     [{path: '' , component: MenuCardComponent},
-      {path: 'Adivina' , component: AdivinaElNumeroComponent},
-      {path: 'AdivinaMasListado' , component: AdivinaMasListadoComponent},
-      {path: 'AgilidadaMasListado' , component: AgilidadMasListadoComponent},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
-      {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent},
-      {path: 'Anagrama', component: AnagramaComponent},
-      {path: 'Tateti', component: TatetiComponent},
-      {path: 'Shooter', component: ShooterComponent}]
-},
+     [{path: '' , component: MenuCardComponent, data: {animation: 'loginpage'}},
+      {path: 'Adivina' , component: AdivinaElNumeroComponent, data: {animation: 'loginpage'}},
+      {path: 'Agilidad' , component: AgilidadAritmeticaComponent, data: {animation: 'loginpage'}},
+      {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent, data: {animation: 'loginpage'}},
+      {path: 'Anagrama', component: AnagramaComponent, data: {animation: 'loginpage'}},
+      {path: 'Tateti', component: TatetiComponent, data: {animation: 'loginpage'}},
+      {path: 'Shooter', component: ShooterComponent, data: {animation: 'loginpage'}}]
+},//A los hijos los toma con la animacion del padre, tendria que sacarlos del padre para que esten animados pero es un re quilombo
+//Creo que algo se puede hacer en el animation.ts con los childs del mismo
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
 

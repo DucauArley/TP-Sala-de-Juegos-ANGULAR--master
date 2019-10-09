@@ -30,7 +30,7 @@
   <nav class="navbar color">
     <div class="container-fluid">
       <div class="navbar-header row">
-        <a class="nav-link navbar-brand dropdown-toggle color" data-toggle="collapse" data-target="#myNavbar">Juegos</a>
+        <a class="nav-link navbar-brand dropdown-toggle color" style="color:dodgerblue" data-toggle="collapse" data-target="#myNavbar">Juegos</a>
         <a class="navbar-brand" routerLink="/Principal">Inicio</a>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -45,8 +45,8 @@
             </ul>
       </div>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="/QuienSoy"><span class="glyphicon glyphicon-user"></span> Mis Datos</a></li>
-          <li (click)="Logout()"><a href="/Principal"><span class="glyphicon glyphicon-log-out"></span> Salir</a></li>
+          <li routerLink='/QuienSoy' style="color:dodgerblue"> Mis Datos</li>
+          <li (click)="Logout()" style="color:dodgerblue"> Salir</li>
       </ul>
     </div>
   </nav>

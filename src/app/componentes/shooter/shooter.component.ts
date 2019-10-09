@@ -15,6 +15,7 @@ export class ShooterComponent implements OnInit
   contador:number = 0;
   blancos:number ;
   Mensajes: string;
+  contadorBlancos: number = 0;
 
   constructor() { }
 
@@ -39,6 +40,7 @@ export class ShooterComponent implements OnInit
   Jugar()
   {
     this.Tiempo = this.blancos;
+    this.contadorBlancos = this.blancos;
     this.repetidor = setInterval(()=>
     { 
       this.Tiempo--;
@@ -53,8 +55,10 @@ export class ShooterComponent implements OnInit
         }
       },1000);
 
-      console.log("llego", this.Tiempo);
-      if(this.Tiempo==0) 
+      console.log("Tiempo:", this.contadorBlancos);
+      console.log("Contador:", this.contador);
+
+      if(this.Tiempo==0 || !this.Verificar()) 
       {
         clearInterval(this.repetidor);
         this.Tiempo=this.blancos;
@@ -63,7 +67,7 @@ export class ShooterComponent implements OnInit
         let descanso = setInterval(()=>
         {
           tiempo = tiempo - 1;
-          if(tiempo == 0)
+          if(tiempo == 0) 
           {
             if(this.contador == this.blancos)
             {
@@ -90,15 +94,27 @@ export class ShooterComponent implements OnInit
           }
         },1000);
       }
+
+      this.contadorBlancos --;
     }, 1500);
 
+  }
+
+  Verificar()
+  {
+    let retorno: boolean = true;
+    if((this.blancos - this.contador) != this.contadorBlancos) 
+    {
+      retorno = false;
+      this.enJuego = false;
+    }
+
+    return retorno
   }
 
   AparecerBoton():number
   {
     let boton = Math.floor(Math.random() * 9) + 1;
-
-    console.log(boton);
 
     return boton;
   }
@@ -106,7 +122,6 @@ export class ShooterComponent implements OnInit
   Entra()
   {
     this.contador ++;
-    console.log(this.contador);
     this.numBoton = -1;
   }
 

@@ -9,6 +9,31 @@
     position: relative;
 }
 
+.button{
+    margin-left: 1px;
+    display: inline-block;
+    width: 90%;
+    padding: 5px 15px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: red;
+    border: none;
+    border-radius: 15px;
+
+    border: none;
+    outline: 0;
+ 
+    padding: 8px;
+    color: white;
+   /* background-color: #000;*/
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+
 #snackbar {
     visibility: hidden;
     min-width: 250px;

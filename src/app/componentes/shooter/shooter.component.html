@@ -37,9 +37,12 @@
         Cantidad de blancos:
         <input [(ngModel)]="blancos" placeholder="ingrese la cantidad de blancos" name="numeroIngresado" type="text" class="form-control" style="width:200%"/>
         <br>
-        <button (click)="NuevoJuego()"  class="btn btn-info btn-lg">Nuevo Juego</button>
+        <button (click)="NuevoJuego()"  class="btn button btn-lg">Nuevo Juego</button>
       </div>
       </ul>
+      <div [hidden]="!enJuego">
+        <p>Puntuacion: {{contador * 100}}</p>
+      </div>
 </form>
 </div>
 </div>
