@@ -13,6 +13,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   enJuego:boolean = false;
   contesto:boolean;
   public imagenMaquina:string = "./././assets/imagenes/interrogatorio.png";
+  public imagenUsuario:string = "./././assets/imagenes/interrogatorio.png";
   Mensajes: string;
 
   constructor() { }
@@ -23,6 +24,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   empezar()
   {
     this.imagenMaquina = "./././assets/imagenes/interrogatorio.png";
+    this.imagenUsuario = "./././assets/imagenes/interrogatorio.png";
     this.contesto = false;
     this.juego = new JuegoPiedraPapelTijera();
     this.juego.JugarMaquina();
@@ -35,6 +37,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   {
     this.juego.jugadaUsuario = jugadaUser;
     this.contesto = true;
+    this.setImagenUsuario();
     this.setImagen();
     await delay(500);
     this.remate();
@@ -83,6 +86,22 @@ export class PiedraPapelTijeraComponent implements OnInit {
         break;
       case 3:
         this.imagenMaquina = "./././assets/imagenes/tijera.jpg";
+        break;
+    }
+  }
+
+  setImagenUsuario()
+  {
+    switch(this.juego.jugadaUsuario)
+    {
+      case 1:
+        this.imagenUsuario = "./././assets/imagenes/piedra.jpg";
+        break;
+      case 2:
+        this.imagenUsuario = "./././assets/imagenes/papel.jpg";
+        break;
+      case 3:
+        this.imagenUsuario = "./././assets/imagenes/tijera.jpg";
         break;
     }
   }

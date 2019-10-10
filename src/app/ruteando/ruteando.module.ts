@@ -43,15 +43,14 @@ const MiRuteo = [
 { path: 'Juegos' ,
 component: JuegosComponent, data: {animation: 'FilterPage'}, 
 children:
-     [{path: '' , component: MenuCardComponent, data: {animation: 'loginpage'}},
-      {path: 'Adivina' , component: AdivinaElNumeroComponent, data: {animation: 'loginpage'}},
-      {path: 'Agilidad' , component: AgilidadAritmeticaComponent, data: {animation: 'loginpage'}},
-      {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent, data: {animation: 'loginpage'}},
-      {path: 'Anagrama', component: AnagramaComponent, data: {animation: 'loginpage'}},
-      {path: 'Tateti', component: TatetiComponent, data: {animation: 'loginpage'}},
-      {path: 'Shooter', component: ShooterComponent, data: {animation: 'loginpage'}}]
-},//A los hijos los toma con la animacion del padre, tendria que sacarlos del padre para que esten animados pero es un re quilombo
-//Creo que algo se puede hacer en el animation.ts con los childs del mismo
+     [{path: '' , component: MenuCardComponent},
+      {path: 'Adivina' , component: AdivinaElNumeroComponent},
+      {path: 'Agilidad' , component: AgilidadAritmeticaComponent},
+      {path: 'PiedraPapelTijera', component: PiedraPapelTijeraComponent},
+      {path: 'Anagrama', component: AnagramaComponent},
+      {path: 'Tateti', component: TatetiComponent},
+      {path: 'Shooter', component: ShooterComponent}]
+},
 {path: '**' , component: ErrorComponent},
 {path: 'error' , component: ErrorComponent}];
 
