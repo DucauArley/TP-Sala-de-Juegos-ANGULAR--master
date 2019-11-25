@@ -1,10 +1,16 @@
-<app-cabecera>  </app-cabecera>
+<app-cabecera (loger)="logear = true" >  </app-cabecera>
 
 <body class="panel">
-<div class="container" >
-   
+<div class="container color1" >
+    <div class="row" style="background-color: red;">
+        <div class="d-flex w-100 justify-content-center">
+            <h2 class="mb-1" style="color: white;">Menu Principal</h2>
+        </div>
+    </div>
+   <div class="row">
+     <div class="col-lg-6">
         <li class="color1">
-          <a *ngIf="logeado" routerLink="/Juegos">
+          <a (click)="redirigir()">
             <div class="media">
               <div class="media-left">
                     <img src="./assets/imagenes/saladejuegos.jpg" class="media-object imagenDeMenu" >
@@ -15,18 +21,9 @@
               </div>
             </div>
           </a>
-          <a *ngIf="!logeado" routerLink="/Login">
-            <div class="media">
-              <div class="media-left">
-                    <img src="./assets/imagenes/saladejuegos.jpg" class="media-object imagenDeMenu" >
-              </div>
-              <div class="media-body">
-                <h3 class="media-heading">Juegos</h3> 
-                <p>El método lúdico es un conjunto de estrategias diseñadas para crear un ambiente de armonía en los estudiantes que están inmersos en el proceso de aprendizaje. Este método busca que los alumnos se apropien de los temas impartidos por los docentes utilizando el juego.</p>
-              </div>
-            </div> 
-          </a>
         </li>
+     </div>
+     <div class="col-lg-6">
         <li class="color1 ">
             <a routerLink="/Listado">
               <div class="media">
@@ -41,6 +38,11 @@
               </div> 
             </a>
           </li>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
         <li class="color1">
           <a routerLink="/Juegos">
             <div class="media">
@@ -55,6 +57,8 @@
             </div> 
           </a>
         </li>
+      </div>
+      <div class="col-lg-6">
         <li class="color1">
           <a routerLink="/Jugadores">
             <div class="media">
@@ -69,4 +73,11 @@
             </div> 
           </a>
         </li>
+      </div>
+
+    </div>
+    <app-login (log)="logear = false" *ngIf="logear"></app-login>
+    <br>
 </div>
+
+<app-pie></app-pie>

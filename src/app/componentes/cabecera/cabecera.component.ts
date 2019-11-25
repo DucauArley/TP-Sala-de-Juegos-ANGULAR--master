@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './../../servicios/auth.service';
 import { auth } from 'firebase/app';
 
@@ -10,6 +10,7 @@ import { auth } from 'firebase/app';
 })
 export class CabeceraComponent implements OnInit {
 
+  @Output() loger: EventEmitter<any> = new EventEmitter<any>();
   logeado:boolean = false;
 
   constructor(private authService: AuthService) { }
@@ -36,5 +37,5 @@ export class CabeceraComponent implements OnInit {
   {
     this.authService.LogoutUsuario();
   }
-
+  
 }

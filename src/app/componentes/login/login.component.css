@@ -104,3 +104,24 @@ span.psw {
        width: 100%;
     }
 }
+
+.contenedor
+{
+	position: fixed;
+	width: 35%;
+	border-radius: 5px;
+	background-color: #F84944;
+	padding: 0px;
+	box-sizing: border-box;
+	margin: 0px auto;
+	left: 32%;
+	top: 20px;
+	animation-name: aparecer;
+	animation-duration: 4s;
+}
+
+@keyframes aparecer
+{
+	from{opacity: 0}
+	to{opacity: 1}
+}

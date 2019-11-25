@@ -54,6 +54,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
 import { ShooterComponent } from './componentes/shooter/shooter.component';
 import { AuthService } from './servicios/auth.service';
+import { PieComponent } from './componentes/pie/pie.component';
 
 @NgModule({
   declarations: [
@@ -82,7 +83,8 @@ import { AuthService } from './servicios/auth.service';
     SexoPipe,
     PiedraPapelTijeraComponent,
     TatetiComponent,
-    ShooterComponent
+    ShooterComponent,
+    PieComponent
   ],
   imports: [
     BrowserModule,

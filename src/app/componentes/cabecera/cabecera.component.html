@@ -5,11 +5,8 @@
 <div class="panel panel-default">
   <div class="hero-text">
       <h1 style="font-size:50px">Sala de Juegos</h1>
-      <h2>Arley Ducau</h2>
-      <a href="https://github.com/DucauArley">en GitHub <i class="fa fa-github"></i></a>
-      <a  routerLink="/QuienSoy" >Quien Soy? <i class="fa fa-user"></i></a>
 </div>
     <li [hidden]="logeado"><a routerLink="/Registro"><span class="glyphicon glyphicon-user"></span>Registrarse</a></li>
-    <li [hidden]="logeado"><a  routerLink="/Login"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
+    <li [hidden]="logeado"><a style="color:dodgerblue" (click)="loger.emit(false)"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>
     <li [hidden]="!logeado" (click)="Logout()"><h4><a  routerLink="/Principal"><span class="glyphicon glyphicon-log-out"></span> Salir</a></h4> </li>
 </div>

@@ -7,6 +7,12 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
 }
 
+p
+{
+    color: #F9AF38;
+}
+
+
 /* Set a style for all buttons */
 button {
     background-color: #4CAF50;
@@ -46,13 +52,23 @@ button {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
+.panel
+{
+    height: 1050px;
+    width: 100%;
+    background-image: url("../../../assets/imagenes/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
 
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 98%; /* Could be more or less, depending on screen size */
+    width: 50%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button (x) */

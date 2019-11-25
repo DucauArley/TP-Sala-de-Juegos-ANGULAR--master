@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthService } from './../../servicios/auth.service';
 import { auth } from 'firebase/app';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-principal',
@@ -14,9 +14,10 @@ export class PrincipalComponent implements OnInit {
     isFirstDisabled: false
   };
 
+  public logear:boolean = false;
   public logeado:boolean = false;
 
-  constructor(private authService: AuthService) 
+  constructor(private authService: AuthService, private router: Router) 
   {
 
   }
@@ -38,6 +39,19 @@ export class PrincipalComponent implements OnInit {
         console.log('NOT user logged', this.authService);
       }
     });
+  }
+
+  redirigir()
+  {
+    if(this.logeado)
+    {
+      this.router.navigate(['/Juegos']);
+    }
+    else
+    {
+      this.logear = true;
+    }
+
   }
 
 }

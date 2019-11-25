@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { auth } from 'firebase/app';
@@ -13,6 +13,7 @@ import {TimerObservable} from "rxjs/observable/TimerObservable";
 })
 export class LoginComponent implements OnInit {
 
+  @Output() log: EventEmitter<any> = new EventEmitter<any>();
   private subscription: Subscription;
   email = '';
   clave= '';
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
         segundos = segundos -1;
         if(segundos == 0)
         {
-          this.router.navigate(['/Principal']);
+          this.log.emit(false);
           clearInterval(intervalo);
         }
       },1000);
